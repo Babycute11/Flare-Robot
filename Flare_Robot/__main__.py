@@ -89,7 +89,7 @@ PM_START_TEXT = """
 """
 
 HELP_STRINGS = """
-Hey there, I'm Nero Robot !
+Hoi hoi baka , I'm sakura  !
 To make me functional, make sure that i have enough rights in your group.
 Helpful commands:
 - /start: Starts me! You've probably already used this.
@@ -106,27 +106,27 @@ List of all the Modules:
 buttons = [
     [
                         InlineKeyboardButton(
-                            text=f"Add Nero To Your Group",
-                            url=f"https://telegram.dog/secre_swallowtailbot?startgroup=true")
+                            text=f"summon me ",
+                            url=f"https://telegram.dog/sakuraxrobot?startgroup=true")
                     ],
                    [
-                       InlineKeyboardButton(text="[► Help ◄]", callback_data="help_back"),
-                       InlineKeyboardButton(text="❔ Chit Chat", url="https://t.me/OtaKu_Gang1"),
-                       InlineKeyboardButton(text="[► Inline ◄]", switch_inline_query_current_chat=""),
+                       InlineKeyboardButton(text=" Help ", callback_data="help_back"),
+                       InlineKeyboardButton(text=" Chit Chat", url="https://t.me/delusionera"),
+                       InlineKeyboardButton(text=" Inline ", switch_inline_query_current_chat=""),
                      ],
                     [                  
                        InlineKeyboardButton(
-                             text="🚑 Support",
-                             url=f"https://telegram.dog/nero_support"),
+                             text="Support",
+                             url=f"https://telegram.dog/Sakuraxsupport"),
                        InlineKeyboardButton(
-                             text="📢 Updates",
-                             url="https://t.me/nero_updates")
+                             text="Updates",
+                             url="https://t.me/Sakuraxsupport")
                      ], 
     ]
 
 
 
-DONATE_STRING = """Thanks For Your Support Though My Creator Doesn't Need Support Monetarily, Still Contact Him For More Info:- @Lord_Seventh_Hokage_Naruto """
+DONATE_STRING = """Thanks For Your Support Though My Creator Doesn't Need Support Monetarily, Still Contact Him For More Info:- @baby_hoi """
 
 IMPORTED = {}
 MIGRATEABLE = []
