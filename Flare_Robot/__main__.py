@@ -76,16 +76,16 @@ def get_readable_time(seconds: int) -> str:
 
 GROUP_START_IMG = "https://telegra.ph/file/5b6cde48c061a49332b6a.jpg"
 
-FLARE_PHOTO = "https://telegra.ph/file/5b6cde48c061a49332b6a.jpg"
+FLARE_PHOTO = "https://telegra.ph/file/4569120424132ffa9db38.jpg"
 
 PM_START_TEXT = """
 ────「 {} 」────
-*Hey! {},*
-* I am an Anime themed advance group management bot with a lots of Features.*
-➖➖➖➖➖➖➖➖➖➖➖
+*Oi! {},*
+*  𝘐 𝘢𝘮 𝘴𝘢𝘬𝘶𝘳𝘢 𝘺𝘢𝘮𝘢𝘶𝘤𝘩𝘪 , 𝘸𝘪𝘭𝘭 𝘺𝘰𝘶 𝘭𝘦𝘵 𝘮𝘦 𝘦𝘢𝘵 𝘺𝘰𝘶𝘳 𝘱𝘢𝘯𝘤𝘳𝘦𝘢𝘴?.*
+╔═══════•❃•❀•❃════════╗
 • *Uptime:* `{}`
-➖➖➖➖➖➖➖➖➖➖➖
-➛ Try The Help Buttons Below To Know My Abilities[.](https://telegra.ph/file/ecca402e5503f6ca482d4.mp4) ××
+╠════════════════════╣
+× 𝘛𝘳𝘺 𝘛𝘩𝘦 𝘏𝘦𝘭𝘱 𝘉𝘶𝘵𝘵𝘰𝘯𝘴 𝘵𝘰 𝘬𝘯𝘰𝘸 𝘸𝘩𝘢𝘵 𝘤𝘢𝘯 𝘐 𝘥𝘰 × [.](https://telegra.ph/file/4569120424132ffa9db38.jpg) ××
 """
 
 HELP_STRINGS = """
