@@ -273,18 +273,18 @@ def start(update: Update, context: CallbackContext):
                 [
                     [
                         InlineKeyboardButton(
-                            text="×Support×",
+                            text="sᴜᴘᴘᴏʀᴛ",
                             url=f"https://telegram.dog/Sakuraxsupport",
                         ),
                         InlineKeyboardButton(
-                            text="×Updates×",
-                            url="https://t.me/Sakuraxsupport",
+                            text="ʜᴜʙʙʏ",
+                            url="https://t.me/baby_hoii",
                         ),
                         InlineKeyboardButton(
-                          text="×HELP×", url=f"https://t.me/sakuraxrobot?start=help",
+                          text="ʜᴇʟᴘ", url=f"https://t.me/sakuraxrobot?start=help",
                         ),
                         InlineKeyboardButton(
-                          text="×network×", url=f"https://t.me/aboutastaXbonten",
+                          text="Fᴇᴅ", url=f"https://t.me/void_federation",
                         ),
             
                     ]
