@@ -74,7 +74,7 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-GROUP_START_IMG = "https://telegra.ph/file/5b6cde48c061a49332b6a.jpg"
+GROUP_START_IMG = "https://telegra.ph/file/20c71c8bb7585b40a9f82.mp4"
 
 FLARE_PHOTO = "https://telegra.ph/file/4569120424132ffa9db38.jpg"
 
@@ -234,7 +234,7 @@ def start(update: Update, context: CallbackContext):
                     update.effective_chat.id,
                     HELPABLE[mod].__help__,
                     InlineKeyboardMarkup(
-                        [[InlineKeyboardButton(text="[ Back ]", callback_data="help_back")]]
+                        [[InlineKeyboardButton(text="[Back]", callback_data="help_back")]]
                     ),
                 )
 
@@ -265,7 +265,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_animation(
-            GROUP_START_IMG, caption= "I won't sleep until I satisfy you!\n<b>Haven't slept since:</b> <code>{}</code>".format(
+            GROUP_START_IMG, caption= "hoi baka I'm here as you called!\n<b>Haven't slept since:</b> <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
