@@ -280,6 +280,9 @@ def start(update: Update, context: CallbackContext):
                             text="📢 Updates",
                             url="https://t.me/Sakuraxsupport",
                         ),
+                        InlineKeyboardButton(
+                          text="「HELP」", url=f"https://t.me/sakuraxrobot?start=help",
+                        ),
                     ]
                 ]
             ),
