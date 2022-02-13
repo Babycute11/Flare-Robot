@@ -286,11 +286,11 @@ def start(update: Update, context: CallbackContext):
                         InlineKeyboardButton(
                           text="×network×", url=f"https://t.me/aboutastaXbonten",
                         ),
-                   [
+                   (
                         InlineKeyboardButton(
                             text=f"network",
                             url=f"https://t.me/void_federation",
-                    ],
+                    ),
                     ]
                 ]
             ),
