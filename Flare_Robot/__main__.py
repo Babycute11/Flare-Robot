@@ -397,7 +397,7 @@ def get_help(update: Update, context: CallbackContext):
                         [
                             InlineKeyboardButton(
                                 text="Help",
-                                url="t.me/secre_swallowtailbot?start=ghelp_{}".format(
+                                url="t.me/sakuraxrobott?start=ghelp_{}".format(
                                     context.bot.username, module,
                                 ),
                             ),
@@ -413,7 +413,7 @@ def get_help(update: Update, context: CallbackContext):
                     [
                         InlineKeyboardButton(
                             text="Help",
-                            url="t.me/secre_swallowtailbot?start=help".format(context.bot.username),
+                            url="t.me/sakuraxrobot?start=help".format(context.bot.username),
                         ),
                     ],
                 ],
@@ -583,7 +583,7 @@ def get_settings(update: Update, context: CallbackContext):
                         [
                             InlineKeyboardButton(
                                 text="Settings",
-                                url="t.me/{}?start=stngs_{}".format(
+                                url="t.me/sakuraxrobot?start=stngs_{}".format(
                                     context.bot.username, chat.id,
                                 ),
                             ),
