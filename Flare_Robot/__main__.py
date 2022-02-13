@@ -80,12 +80,12 @@ FLARE_PHOTO = "https://telegra.ph/file/4569120424132ffa9db38.jpg"
 
 PM_START_TEXT = """
 ────「 {} 」────
-*Oi! {},*
-*  𝘐 𝘢𝘮 𝘴𝘢𝘬𝘶𝘳𝘢 𝘺𝘢𝘮𝘢𝘶𝘤𝘩𝘪 , 𝘸𝘪𝘭𝘭 𝘺𝘰𝘶 𝘭𝘦𝘵 𝘮𝘦 𝘦𝘢𝘵 𝘺𝘰𝘶𝘳 𝘱𝘢𝘯𝘤𝘳𝘦𝘢𝘴?.*
-╔═══════•❃•❀•❃════════╗
-• *Uptime:* `{}`
-╠════════════════════╣
-× 𝘛𝘳𝘺 𝘛𝘩𝘦 𝘏𝘦𝘭𝘱 𝘉𝘶𝘵𝘵𝘰𝘯𝘴 𝘵𝘰 𝘬𝘯𝘰𝘸 𝘸𝘩𝘢𝘵 𝘤𝘢𝘯 𝘐 𝘥𝘰 × [.](https://telegra.ph/file/4569120424132ffa9db38.jpg) ××
+*𝗢𝗶! {},*
+*•   𝗜'𝗺 𝘀𝗮𝗸𝘂𝗿𝗮 𝘆𝗮𝗺𝗮𝘂𝗰𝗵𝗶! 𝗪𝗶𝗹𝗹 𝘆𝗼𝘂 𝗹𝗲𝘁 𝗺𝗲 𝗲𝗮𝘁 𝘆𝗼𝘂𝗿 𝗽𝗮𝗻𝗰𝗿𝗲𝗮𝘀?.*
+════════════════════
+• *𝗨𝗽𝘁𝗶𝗺𝗲:* `{}`
+════════════════════
+• 𝘁𝗿𝘆 𝘂𝘀𝗶𝗻𝗴 /help 𝘁𝗼 𝗸𝗻𝗼𝘄 𝘄𝗵𝗮𝘁 𝗜 𝗰𝗮𝗻 𝗱𝗼!   [.](https://telegra.ph/file/4569120424132ffa9db38.jpg) ××
 """
 
 HELP_STRINGS = """
@@ -106,7 +106,7 @@ List of all the Modules:
 buttons = [
     [
                         InlineKeyboardButton(
-                            text=f"summon me ",
+                            text=f"summon me",
                             url=f"https://telegram.dog/sakuraxrobot?startgroup=true")
                     ],
                    [
@@ -198,16 +198,16 @@ def test(update: Update, context: CallbackContext):
 @telethn.on(events.NewMessage(pattern="/check"))
 async def awake(event):
   ғʟᴀʀᴇ = event.sender.first_name
-  ғʟᴀʀᴇ = "**♡ I,m ɴᴇʀᴏ ʀᴏʙᴏᴛ 愛** \n\n"
-  ғʟᴀʀᴇ += "**♡ I'm Working With sᴇxʏ Speed**\n\n"
-  ғʟᴀʀᴇ += "**♡ ɴᴇʀᴏ: LATEST Version**\n\n"
-  ғʟᴀʀᴇ += "**♡ My Creator:** [卐⁣༒ℕ₳ᏒꪙƬΘ༒卐⁣](t.me/@{OWNER_USERNAME})\n\n"
-  ғʟᴀʀᴇ += "**♡ ᴀɴʏ ɪssᴜᴇs ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ @Nero_Support **\n\n"
-  ғʟᴀʀᴇ += "**♡ ᴛʜᴀɴᴋ ʏᴏᴜ ғᴏʀ ᴀᴅᴅɪɴɢ ᴍᴇ 💘💘💘**\n\n"
+  ғʟᴀʀᴇ = "**•  𝚘𝚒 𝚋𝚊𝚔𝚊 𝙸'𝚖 𝚜𝚊𝚔𝚞𝚛𝚊 𝚢𝚊𝚖𝚊𝚞𝚌𝚑𝚒** \n\n"
+  ғʟᴀʀᴇ += "**•  𝙸'𝚖 𝚊𝚕𝚛𝚒𝚐𝚑𝚝 𝚠𝚑𝚊𝚝 𝚊𝚋𝚘𝚞𝚝 𝚢𝚘𝚞 ? **\n\n"
+  ғʟᴀʀᴇ += "**•  𝚌𝚊𝚗 𝙸 𝚎𝚊𝚝 𝚢𝚘𝚞𝚛 𝚙𝚊𝚗𝚌𝚛𝚎𝚊𝚜**\n\n"
+  ғʟᴀʀᴇ += "**•  𝙼𝚢 𝚑𝚞𝚋𝚋𝚢:** [haruki⁣](t.me/baby_hoii)\n\n"
+  ғʟᴀʀᴇ += "**•  𝚏𝚘𝚛 𝚝𝚛𝚘𝚞𝚋𝚕𝚎𝚜𝚑𝚘𝚘𝚝𝚒𝚗𝚐 𝚓𝚘𝚒𝚗 @sakuraxsupport **\n\n"
+  ғʟᴀʀᴇ += "**•  𝙸'𝚕𝚕 𝚙𝚛𝚘𝚝𝚎𝚌𝚝 𝚢𝚘𝚞𝚛 𝚐𝚛𝚘𝚞𝚙 𝚊𝚗𝚍 𝚢𝚘𝚞 𝚝𝚘𝚘 𝚋𝚊𝚔𝚊 𝚑𝚎𝚑𝚎 !**\n\n"
   FLARE_BUTTON = [
       [
           Button.url("🚑 Support", f"https://t.me/{SUPPORT_CHAT}"),
-          Button.url("📢 Updates", "https://t.me/Nero_Updates")
+          Button.url("📢 Updates", "https://t.me/Sakuraxsupport")
       ]
   ]
   await telethn.send_file(
@@ -234,7 +234,7 @@ def start(update: Update, context: CallbackContext):
                     update.effective_chat.id,
                     HELPABLE[mod].__help__,
                     InlineKeyboardMarkup(
-                        [[InlineKeyboardButton(text="[► Back ◄]", callback_data="help_back")]]
+                        [[InlineKeyboardButton(text="[ Back ]", callback_data="help_back")]]
                     ),
                 )
 
@@ -274,11 +274,11 @@ def start(update: Update, context: CallbackContext):
                     [
                         InlineKeyboardButton(
                             text="🚑 Support",
-                            url=f"https://telegram.dog/Nero_Support",
+                            url=f"https://telegram.dog/Sakuraxsupport",
                         ),
                         InlineKeyboardButton(
                             text="📢 Updates",
-                            url="https://t.me/Nero_Updates",
+                            url="https://t.me/Sakuraxsupport",
                         ),
                     ]
                 ]
