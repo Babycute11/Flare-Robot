@@ -1,3 +1,4 @@
+
 import html
 import re
 import os
@@ -23,6 +24,7 @@ from telegram.utils.helpers import escape_markdown, mention_html
 from Flare_Robot import (
     DEV_USERS,
     OWNER_ID,
+    OWNER_USERNAME,
     DRAGONS,
     DEMONS,
     TIGERS,
@@ -247,24 +249,24 @@ def info(update: Update, context: CallbackContext):
     else:
         return
 
-    rep = message.reply_text("<code>Getting info...</code>", parse_mode=ParseMode.HTML)
+    rep = message.reply_text("<code>Appraising...</code>", parse_mode=ParseMode.HTML)
 
     text = (
-        f"╔═━「<b> Appraisal results:</b> 」\n"
-        f"✪ ID: <code>{user.id}</code>\n"
-        f"✪ First Name: {html.escape(user.first_name)}"
+        f"╒═══「<b> Appraisal results:</b> 」\n"
+        f"ID: <code>{user.id}</code>\n"
+        f"First Name: {html.escape(user.first_name)}"
     )
 
     if user.last_name:
-        text += f"\n✪ Last Name: {html.escape(user.last_name)}"
+        text += f"\nLast Name: {html.escape(user.last_name)}"
 
     if user.username:
-        text += f"\n✪ Username: @{html.escape(user.username)}"
+        text += f"\nUsername: @{html.escape(user.username)}"
 
-    text += f"\n✪ Userlink: {mention_html(user.id, 'link')}"
+    text += f"\nUserlink: {mention_html(user.id, 'link')}"
 
     if chat.type != "private" and user_id != bot.id:
-        _stext = "\n✪ Presence: <code>{}</code>"
+        _stext = "\nPresence: <code>{}</code>"
 
         afk_st = is_afk(user.id)
         if afk_st:
@@ -288,32 +290,36 @@ def info(update: Update, context: CallbackContext):
             text += "\n\n<b>This person is Spamwatched!</b>"
             text += f"\nReason: <pre>{spamwtc.reason}</pre>"
             text += "\nAppeal at @SpamWatchSupport"
+        else:
+            pass
     except:
         pass  # don't crash if api is down somehow...
 
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\nThis person is my 'Keyaru sama'."
+        text += "\n\nThis person is my <b>'Prince Lemiel'</b>."
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += "\n\nThis user is my 'Healing Hero'."
+        text += "\n\nThis user is Mage of the 'Arcane Stage'."
         disaster_level_present = True
     elif user.id in DRAGONS:
-        text += "\n\nThis person is my 'Knight'."
+        text += "\n\nThe Disaster level of this person is 'Zero Stage Mage'."
         disaster_level_present = True
     elif user.id in DEMONS:
-        text += "\n\nThis person is my 'Magic Hero'."
-        disaster_level_present = True
+        text += "\n\nThe Disaster level of this person is 'First Stage Mage'."
+        disaster_level_present = True 
     elif user.id in TIGERS:
-        text += "\n\nthis person is my 'Rifle Hero'."
+        text += "\n\nThe Disaster level of this person is 'Support Mage'."
         disaster_level_present = True
     elif user.id in WOLVES:
-        text += "\n\nThis person is my 'Demi Human'."
+        text += "\n\nThe Disaster level of this person is 'Saint Stage Mage'."
         disaster_level_present = True
-    elif user.id == 1635151800:
-         text += "\n\nMy owner @Ryu_God. My Darling."
-         disaster_level_present = True
+
+    if disaster_level_present:
+        text += ' [<a href="https://t.me/Nero_Updates/4">✮</a>]'.format(
+            bot.username,
+        )
 
     try:
         user_member = chat.get_member(user.id)
@@ -330,63 +336,35 @@ def info(update: Update, context: CallbackContext):
 
     for mod in USER_INFO:
         try:
-            mod_info = mod.user_info(user.id).strip()
+            mod_info = mod.__user_info__(user.id).strip()
         except TypeError:
-            mod_info = mod.user_info(user.id, chat.id).strip()
+            mod_info = mod.__user_info__(user.id, chat.id).strip()
         if mod_info:
             text += "\n\n" + mod_info
 
-if INFOPIC:
+    if INFOPIC:
         try:
             profile = context.bot.get_user_profile_photos(user.id).photos[0][-1]
-            _file = bot.get_file(profile["file_id"])
-            _file.download(f"{user.id}.jpg")
-
-            message.reply_photo(
-                photo=open(f"{user.id}.jpg", "rb"),
-                caption=(text),
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton(
-                                "Health", url="https://t.me/Freia_Updates/9"),
-                            InlineKeyboardButton(
-                                "Disaster", url="https://t.me/Freia_Updates/5")
-                        ],
-                    ]
-                ),
-                parse_mode=ParseMode.HTML,
-            )
-
-            os.remove(f"{user.id}.jpg")
+            context.bot.sendChatAction(chat.id, "upload_photo")
+            context.bot.send_photo(
+            chat.id,
+            photo=profile,
+            caption=(text),
+            parse_mode=ParseMode.HTML,
+            disable_web_page_preview=True,
+         )
         # Incase user don't have profile pic, send normal text
         except IndexError:
             message.reply_text(
-                text, 
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton(
-                                "Health", url="https://t.me/Freia_Updates/9"),
-                            InlineKeyboardButton(
-                                "Disaster", url="https://t.me/Freia_Updates/5")
-                        ],
-                    ]
-                ),
-                parse_mode=ParseMode.HTML,
-                disable_web_page_preview=True
+                text, parse_mode=ParseMode.HTML, disable_web_page_preview=True,
             )
 
     else:
         message.reply_text(
-            text, parse_mode=ParseMode.HTML,
+            text, parse_mode=ParseMode.HTML, disable_web_page_preview=True,
         )
 
     rep.delete()
-
-    
-           
-    
 
 
 @run_async
@@ -462,8 +440,8 @@ def stats(update, context):
             status
             + "\n*Bot statistics*:\n"
             + "\n".join([mod.__stats__() for mod in STATS])
-            + f"\n\n[✦ Support](https://t.me/{SUPPORT_CHAT}) | [✦ Updates](https://t.me/sakuraxupdates)\n\n"
-            + "╘══「 by [haruki](https://t.me/baby_hoii) 」\n",
+            + f"\n\n[✦ Support](https://t.me/{SUPPORT_CHAT}) | [✦ Updates](https://t.me/Nero_Updates)\n\n"
+            + "╘══「 by [Nαɾυƚσ](https://t.me/{}) 」\n".format(OWNER_USERNAME),
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
         )
@@ -475,9 +453,9 @@ def stats(update, context):
                         "\n*Bot statistics*:\n"
                         + "\n".join(mod.__stats__() for mod in STATS)
                     )
-                    + f"\n\n✦ [Support](https://t.me/{SUPPORT_CHAT}) | ✦ [Updates](https://t.me/sakuraxupdates)\n\n"
+                    + f"\n\n✦ [Support](https://t.me/{SUPPORT_CHAT}) | ✦ [Updates](https://t.me/Nero_Updates/4)\n\n"
                 )
-                + "╘══「 by [haruki](https://t.me/baby_hoii) 」\n"
+                + "╘══「 by [Nαɾυƚσ](https://t.me/{}) 」\n".format(OWNER_USERNAME)
             ),
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
