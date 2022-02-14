@@ -440,8 +440,8 @@ def stats(update, context):
             status
             + "\n*Bot statistics*:\n"
             + "\n".join([mod.__stats__() for mod in STATS])
-            + f"\n\n[✦ Support](https://t.me/{SUPPORT_CHAT}) | [✦ Updates](https://t.me/Nero_Updates)\n\n"
-            + "╘══「 by [Nαɾυƚσ](https://t.me/{}) 」\n".format(OWNER_USERNAME),
+            + f"\n\n[✦ Support](https://t.me/{SUPPORT_CHAT}) | [✦ Updates](https://t.me/sakuraxupdates)\n\n"
+            + "╘══「 by [haruki baby ](https://t.me/{}) 」\n".format(OWNER_USERNAME),
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
         )
@@ -453,9 +453,9 @@ def stats(update, context):
                         "\n*Bot statistics*:\n"
                         + "\n".join(mod.__stats__() for mod in STATS)
                     )
-                    + f"\n\n✦ [Support](https://t.me/{SUPPORT_CHAT}) | ✦ [Updates](https://t.me/Nero_Updates/4)\n\n"
+                    + f"\n\n✦ [Support](https://t.me/{SUPPORT_CHAT}) | ✦ [Updates](https://t.me/sakuraxupdates)\n\n"
                 )
-                + "╘══「 by [Nαɾυƚσ](https://t.me/{}) 」\n".format(OWNER_USERNAME)
+                + "╘══「 by [haruki baby ](https://t.me/{}) 」\n".format(OWNER_USERNAME)
             ),
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
