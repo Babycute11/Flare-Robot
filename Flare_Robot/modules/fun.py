@@ -563,13 +563,6 @@ def gbam(update, context):
 
 
 @run_async
-def cuddle(update, context):
-    msg = update.effective_message
-    target = "cuddle"
-    msg.reply_video(nekos.img(target))
-
-
-@run_async
 def flirt(update: Update, context: CallbackContext):
     reply_text = update.effective_message.reply_to_message.reply_text if update.effective_message.reply_to_message else update.effective_message.reply_text
     reply_text(random.choice(fun_strings.FLIRT_TEXT))
@@ -884,7 +877,6 @@ SHOUT_HANDLER = DisableAbleCommandHandler("shout", shout)
 WEEBIFY_HANDLER = DisableAbleCommandHandler("weebify", weebify)
 GBUN_HANDLER = DisableAbleCommandHandler("gbun", gbun)
 GBAM_HANDLER = DisableAbleCommandHandler("gbam", gbam)
-CUDDLE_HANDLER = DisableAbleCommandHandler("cuddle", cuddle)
 FLIRT_HANDLER = DisableAbleCommandHandler("flirt", flirt,)   
 ROMANCE_HANDLER = DisableAbleCommandHandler("romance", romance) 
 UWU_HANDLER = DisableAbleCommandHandler("uwu", uwu)
@@ -915,7 +907,6 @@ dispatcher.add_handler(RLG_HANDLER)
 dispatcher.add_handler(DECIDE_HANDLER)
 dispatcher.add_handler(EIGHTBALL_HANDLER)
 dispatcher.add_handler(TABLE_HANDLER)
-dispatcher.add_handler(CUDDLE_HANDLER)
 dispatcher.add_handler(FLIRT_HANDLER)
 dispatcher.add_handler(ROMANCE_HANDLER)    
 dispatcher.add_handler(UWU_HANDLER)
@@ -950,7 +941,6 @@ __command_list__ = [
     "8ball",
     "gbun",
     "gbam",
-    "cuddle", 
     "flirt", 
     "romance", 
     "uwu", 
@@ -981,7 +971,6 @@ __handlers__ = [
     EIGHTBALL_HANDLER,
     GBUN_HANDLER,
     GBAM_HANDLER,
-    CUDDLE_HANDLER,
     FLIRT_HANDLER,
     ROMANCE_HANDLER,
     UWU_HANDLER,
