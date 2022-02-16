@@ -431,17 +431,28 @@ def set_about_me(update: Update, context: CallbackContext):
 @sudo_plus
 def stats(update, context):
     uptime = datetime.datetime.fromtimestamp(boot_time()).strftime("%Y-%m-%d %H:%M:%S")
-    status = "*╒═══「 System statistics 」*\n\n"
+    status = "*╒═══「 System Statistics 」*\n\n"
+    status += "*➢ System Start time:* " + str(uptime) + "\n"
+    uname = platform.uname()
+    status += "*➢ System:* " + str(uname.system) + "\n"
+    status += "*➢ Node name:* " + escape_markdown(str(uname.node)) + "\n"
+    status += "*➢ Release:* " + escape_markdown(str(uname.release)) + "\n"
+    status += "*➢ Machine:* " + escape_markdown(str(uname.machine)) + "\n"
+    mem = virtual_memory()
+    cpu = cpu_percent()
+    disk = disk_usage("/")
+    status += "*➢ CPU:* " + str(cpu) + " %\n"
+    status += "*➢ RAM:* " + str(mem[2]) + " %\n"
+    status += "*➢ Storage:* " + str(disk[3]) + " %\n\n"
     status += "*➢ Python Version:* " + python_version() + "\n"
-    status += "*➢ python-Telegram-Bot:* " + str(ptbversion) + "\n"
-    status += "*➢ Uptime:* " + get_readable_time((time.time()-StartTime)) + "\n"
+    status += "*➢ python-Telegram-Bot:* " + str(ptbver) + "\n"
     try:
         update.effective_message.reply_text(
             status
             + "\n*Bot statistics*:\n"
             + "\n".join([mod.__stats__() for mod in STATS])
-            + f"\n\n[✦ Support](https://t.me/{SUPPORT_CHAT}) | [✦ Updates](https://t.me/sakuraxupdates)\n\n"
-            + "╘══「 by [haruki baby ](https://t.me/{}) 」\n".format(OWNER_USERNAME),
+            + f"\n\n✦ [Support](https://t.me/enmu_chat_support) | ✦ [Updates](https://t.me/enmuupdates)\n\n"
+            + "╘══「 Powered By [Enmu](https://t.me/Enmu_kizuki_bot) | [Network](https://t.me/sydexas) 」\n",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
         )
@@ -450,12 +461,12 @@ def stats(update, context):
             (
                 (
                     (
-                        "\n*Bot statistics*:\n"
+                        "\n*Bot Statistics*:\n"
                         + "\n".join(mod.__stats__() for mod in STATS)
                     )
-                    + f"\n\n✦ [Support](https://t.me/{SUPPORT_CHAT}) | ✦ [Updates](https://t.me/sakuraxupdates)\n\n"
+                    + f"\n\n✦ [Support](https://t.me/enmu_chat_support) | ✦ [Updates](http://t.me/enmuupdates)\n\n"
                 )
-                + "╘══「 by [haruki baby ](https://t.me/{}) 」\n".format(OWNER_USERNAME)
+                + "╘══「 Powered By [Enmu](https://t.me/Enmu_Kizuki_bot) | [Network](http://t.me/sydexas)」\n"
             ),
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
