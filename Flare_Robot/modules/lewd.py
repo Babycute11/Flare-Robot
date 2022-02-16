@@ -879,6 +879,7 @@ Commands :
  - /kiss: Sends Random Kissing GIFs.
  - /femdom: Sends Random Femdom source Images.
  - /cuddle: Sends Random Cuddle GIFs.
+ - /hug : Send Random Hug GIFs.
  - /erok: Sends Random Ero-Kitsune source Images.
  - /foxgirl: Sends Random FoxGirl source Images.
  - /titsgif: Sends Random Tits GIFs.
