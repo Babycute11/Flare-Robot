@@ -212,6 +212,12 @@ def wallpaper(update, context):
     msg.reply_photo(nekos.img(target))
 
 @run_async
+def cuddle(update, context):
+    msg = update.effective_message
+    target = "cuddle"
+    msg.reply_video(nekos.img(target))
+
+@run_async
 def lewdk(update, context):
     chat_id = update.effective_chat.id
     if not update.effective_message.chat.type == "private":
@@ -693,7 +699,8 @@ WAIFU_HANDLER = CommandHandler("waifu", waifu)
 LEWD_HANDLER = CommandHandler("lewd", lewd)
 KISS_HANDLER = CommandHandler("kiss", kiss)
 FEMDOM_HANDLER = CommandHandler("femdom", femdom)
-CUDDLE_HANDLER = CommandHandler("hug", hug)
+HUG_HANDLER = CommandHandler("hug", hug)
+CUDDLE_HANDLER = CommandHandler("cuddle", cuddle)
 EROK_HANDLER = CommandHandler("erok", erok)
 FOXGIRL_HANDLER = CommandHandler("foxgirl", foxgirl)
 TITSGIF_HANDLER = CommandHandler("titsgif", titsgif)
@@ -751,6 +758,7 @@ dispatcher.add_handler(LEWD_HANDLER)
 dispatcher.add_handler(KISS_HANDLER)
 dispatcher.add_handler(FEMDOM_HANDLER)
 dispatcher.add_handler(CUDDLE_HANDLER)
+dispatcher.add_handler(HUG_HANDLER)
 dispatcher.add_handler(EROK_HANDLER)
 dispatcher.add_handler(FOXGIRL_HANDLER)
 dispatcher.add_handler(TITSGIF_HANDLER)
@@ -807,6 +815,7 @@ __handlers__ = [
     KISS_HANDLER,
     FEMDOM_HANDLER,
     LEWDKEMO_HANDLER,
+    HUG_HANDLER,
     CUDDLE_HANDLER,
     EROK_HANDLER,
     FOXGIRL_HANDLER,
