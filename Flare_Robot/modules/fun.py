@@ -591,9 +591,9 @@ def cuddle(update: Update, context: CallbackContext):
 	        cuddle_type = "Text"
 
 	if cuddle_type == "Text":
-	    temp = random.choice(fun_strings.CUDDLE_GIF)
+	    temp = random.choice(fun_strings.CUDDLE_TEMPLATES)
 	    reply = temp.format(user1=user1, user2=user2)
-	    reply_to.reply_animation(temp)(reply, parse_mode=ParseMode.HTML)
+	    reply_to.reply_text(reply, parse_mode=ParseMode.HTML)
 
 
 @run_async
