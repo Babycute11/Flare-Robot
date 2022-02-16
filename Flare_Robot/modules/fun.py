@@ -563,37 +563,10 @@ def gbam(update, context):
 
 
 @run_async
-def cuddle(update: Update, context: CallbackContext):
-	bot = context.bot
-	args = context.args
-	message = update.effective_message
-
-	reply_to = message.reply_to_message or message
-
-	curr_user = html.escape(message.from_user.first_name)
-	user_id = extract_user(message, args)
-
-	if user_id:
-	    cuddled_user = bot.get_chat(user_id)
-	    user1 = curr_user
-	    user2 = html.escape(cuddled_user.first_name)
-
-	else:
-	    user1 = bot.first_name
-	    user2 = curr_user
-
-	cuddle_type = random.choice(("Text", "Gif"))
-	if cuddle_type == "Gif":
-	    try:
-	        temp = random.choice(fun_strings.CUDDLE_GIF)
-	        reply_to.reply_animation(temp)
-	    except BadRequest:
-	        cuddle_type = "Text"
-
-	if cuddle_type == "Text":
-	    temp = random.choice(fun_strings.CUDDLE_TEMPLATES)
-	    reply = temp.format(user1=user1, user2=user2)
-	    reply_to.reply_text(reply, parse_mode=ParseMode.HTML)
+def cuddle(update, context):
+    msg = update.effective_message
+    target = "cuddle"
+    msg.reply_video(nekos.img(target))
 
 
 @run_async
