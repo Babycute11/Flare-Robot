@@ -445,7 +445,7 @@ def stats(update, context):
     status += "*➢ RAM:* " + str(mem[2]) + " %\n"
     status += "*➢ Storage:* " + str(disk[3]) + " %\n\n"
     status += "*➢ Python Version:* " + python_version() + "\n"
-    status += "*➢ python-Telegram-Bot:* " + str(ptbver) + "\n"
+    status += "*➢ python-Telegram-Bot:* " + str(ptb_version) + "\n"
     try:
         update.effective_message.reply_text(
             status
