@@ -36,23 +36,22 @@ from telegram.utils.helpers import escape_markdown
 
 from Flare_Robot import (
     ALLOW_EXCL,
-    BL_CHATS,
     CERT_PATH,
     DONATION_LINK,
     LOGGER,
     OWNER_ID,
+    OWNER_USERNAME,
     PORT,
-    SUPPORT_CHAT,
     TOKEN,
     URL,
     WEBHOOK,
-    WHITELIST_CHATS,
-    StartTime,
+    SUPPORT_CHAT,
     dispatcher,
-    pbot,
+    StartTime,
     telethn,
+    BOT_USERNAME,
     updater,
-)
+    pbot)
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
